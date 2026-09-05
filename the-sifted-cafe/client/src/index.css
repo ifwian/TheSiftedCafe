@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   THE SIFTED CAFE — DESIGN SYSTEM
+   Centralized design tokens (Milestone 02). Every color, font, radius, and
+   shadow used across the app should come from here via Tailwind utility
+   classes (e.g. bg-cream, text-coffee, font-display) — never hardcode raw
+   hex values or font names inside components.
+   ========================================================================= */
+
+@theme {
+  /* ---- Brand colors (spec section 12) ------------------------------- */
+  --color-cream: #f7f3ed; /* background */
+  --color-dark: #211c18; /* primary text / dark surfaces */
+  --color-coffee: #6f4e37; /* coffee brown — primary brand color */
+  --color-coffee-dark: #573c2a; /* hover/active state for coffee elements */
+  --color-accent: #c89b6d; /* warm accent — CTAs, highlights */
+  --color-accent-dark: #b3854f; /* hover/active state for accent elements */
+  --color-white: #ffffff;
+
+  /* ---- Typography (spec section 13) ---------------------------------- */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* ---- Shape & elevation ---------------------------------------------
+     Kept restrained on purpose (spec section 91: avoid excessive rounded
+     cards, avoid excessive shadows). One soft shadow, modest radii. */
+  --radius-card: 0.75rem;
+  --shadow-soft: 0 4px 24px -6px rgb(33 28 24 / 0.10);
+  --shadow-lifted: 0 12px 32px -8px rgb(33 28 24 / 0.16);
+}
+
+/* =========================================================================
+   BASE ELEMENT DEFAULTS
+   Semantic HTML should look correct with no classes. Components then only
+   add layout/spacing utilities on top, instead of repeating font/color
+   choices everywhere.
+   ========================================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-cream);
+    color: var(--color-dark);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-dark);
+    line-height: 1.15;
+  }
+
+  h1 {
+    font-size: 2.75rem; /* 44px */
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: 2rem; /* 32px */
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  h4 {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  /* Respect reduced-motion preferences across the app. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* =========================================================================
+   REUSABLE UTILITY CLASSES
+   Small, named patterns used in many places — the "display" type role and
+   the "eyebrow" label style referenced throughout the spec (e.g. section
+   14 "OUR STORY", section 15 "CUSTOMER FAVORITES").
+   ========================================================================= */
+
+@layer components {
+  .text-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+
+  .text-eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-coffee);
+  }
+}
