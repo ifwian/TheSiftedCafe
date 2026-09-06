@@ -1,10 +1,10 @@
-import { useAuth } from '../hooks/useAuth.js'
-import useFetch from '../hooks/useFetch.js'
-import { getDashboardStats } from '../services/adminService.js'
-import StatCard from '../components/admin/StatCard.jsx'
-import LoadingState from '../components/common/LoadingState.jsx'
-import ErrorState from '../components/common/ErrorState.jsx'
-import usePageTitle from '../hooks/usePageTitle.js'
+import { useAuth } from '../../hooks/useAuth.js'
+import useFetch from '../../hooks/useFetch.js'
+import { getDashboardStats } from '../../services/adminService.js'
+import StatCard from '../../components/admin/StatCard.jsx'
+import LoadingState from '../../components/common/LoadingState.jsx'
+import ErrorState from '../../components/common/ErrorState.jsx'
+import usePageTitle from '../../hooks/usePageTitle.js'
 
 /**
  * Dashboard

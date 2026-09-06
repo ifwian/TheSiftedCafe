@@ -1,21 +1,21 @@
 import { useState } from 'react'
-import useFetch from '../hooks/useFetch.js'
-import { useToast } from '../hooks/useToast.js'
-import usePageTitle from '../hooks/usePageTitle.js'
-import Button from '../components/ui/Button.jsx'
-import LoadingState from '../components/common/LoadingState.jsx'
-import ErrorState from '../components/common/ErrorState.jsx'
-import EmptyState from '../components/common/EmptyState.jsx'
-import Modal from '../components/common/Modal.jsx'
-import ConfirmDialog from '../components/common/ConfirmDialog.jsx'
-import ReviewForm from '../components/admin/ReviewForm.jsx'
+import useFetch from '../../hooks/useFetch.js'
+import { useToast } from '../../hooks/useToast.js'
+import usePageTitle from '../../hooks/usePageTitle.js'
+import Button from '../../components/ui/Button.jsx'
+import LoadingState from '../../components/common/LoadingState.jsx'
+import ErrorState from '../../components/common/ErrorState.jsx'
+import EmptyState from '../../components/common/EmptyState.jsx'
+import Modal from '../../components/common/Modal.jsx'
+import ConfirmDialog from '../../components/common/ConfirmDialog.jsx'
+import ReviewForm from '../../components/admin/ReviewForm.jsx'
 import {
   getAllReviewsAdmin,
   createReviewAdmin,
   updateReviewAdmin,
   deleteReviewAdmin,
   toggleReviewPublished,
-} from '../services/adminService.js'
+} from '../../services/adminService.js'
 
 /**
  * ReviewManagement (spec section 37 -- "Admin should control

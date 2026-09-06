@@ -1,14 +1,14 @@
-import useFetch from '../hooks/useFetch.js'
-import { useToast } from '../hooks/useToast.js'
-import usePageTitle from '../hooks/usePageTitle.js'
-import Button from '../components/ui/Button.jsx'
-import LoadingState from '../components/common/LoadingState.jsx'
-import ErrorState from '../components/common/ErrorState.jsx'
-import EmptyState from '../components/common/EmptyState.jsx'
+import useFetch from '../../hooks/useFetch.js'
+import { useToast } from '../../hooks/useToast.js'
+import usePageTitle from '../../hooks/usePageTitle.js'
+import Button from '../../components/ui/Button.jsx'
+import LoadingState from '../../components/common/LoadingState.jsx'
+import ErrorState from '../../components/common/ErrorState.jsx'
+import EmptyState from '../../components/common/EmptyState.jsx'
 import {
   getAllReservationsAdmin,
   updateReservationStatusAdmin,
-} from '../services/adminService.js'
+} from '../../services/adminService.js'
 
 const STATUS_STYLES = {
   PENDING: 'bg-accent/20 text-accent-dark',

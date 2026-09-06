@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import useFetch from '../hooks/useFetch.js'
-import { useToast } from '../hooks/useToast.js'
-import usePageTitle from '../hooks/usePageTitle.js'
-import Button from '../components/ui/Button.jsx'
-import LoadingState from '../components/common/LoadingState.jsx'
-import ErrorState from '../components/common/ErrorState.jsx'
-import EmptyState from '../components/common/EmptyState.jsx'
-import Modal from '../components/common/Modal.jsx'
-import ConfirmDialog from '../components/common/ConfirmDialog.jsx'
-import MenuItemForm from '../components/admin/MenuItemForm.jsx'
-import { getCategories } from '../services/categoryService.js'
+import useFetch from '../../hooks/useFetch.js'
+import { useToast } from '../../hooks/useToast.js'
+import usePageTitle from '../../hooks/usePageTitle.js'
+import Button from '../../components/ui/Button.jsx'
+import LoadingState from '../../components/common/LoadingState.jsx'
+import ErrorState from '../../components/common/ErrorState.jsx'
+import EmptyState from '../../components/common/EmptyState.jsx'
+import Modal from '../../components/common/Modal.jsx'
+import ConfirmDialog from '../../components/common/ConfirmDialog.jsx'
+import MenuItemForm from '../../components/admin/MenuItemForm.jsx'
+import { getCategories } from '../../services/categoryService.js'
 import {
   getAllMenuItemsAdmin,
   createMenuItemAdmin,
@@ -17,7 +17,7 @@ import {
   deleteMenuItemAdmin,
   toggleMenuItemFeatured,
   toggleMenuItemAvailability,
-} from '../services/adminService.js'
+} from '../../services/adminService.js'
 
 /**
  * MenuManagement (spec section 46). Full CRUD, plus one-click toggles for

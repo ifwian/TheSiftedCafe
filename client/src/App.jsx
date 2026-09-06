@@ -19,13 +19,13 @@ import NotFound from './pages/NotFound.jsx'
  * never need this code in their initial bundle.
  */
 const DesignSystemPreview = lazy(() => import('./pages/DesignSystemPreview.jsx'))
-const AdminLogin = lazy(() => import('./admin/AdminLogin.jsx'))
-const Dashboard = lazy(() => import('./admin/Dashboard.jsx'))
-const MenuManagement = lazy(() => import('./admin/MenuManagement.jsx'))
-const ReservationManagement = lazy(() => import('./admin/ReservationManagement.jsx'))
-const MessageManagement = lazy(() => import('./admin/MessageManagement.jsx'))
-const ReviewManagement = lazy(() => import('./admin/ReviewManagement.jsx'))
-const Settings = lazy(() => import('./admin/Settings.jsx'))
+const AdminLogin = lazy(() => import('./pages/admin/AdminLogin.jsx'))
+const Dashboard = lazy(() => import('./pages/admin/Dashboard.jsx'))
+const MenuManagement = lazy(() => import('./pages/admin/MenuManagement.jsx'))
+const ReservationManagement = lazy(() => import('./pages/admin/ReservationManagement.jsx'))
+const MessageManagement = lazy(() => import('./pages/admin/MessageManagement.jsx'))
+const ReviewManagement = lazy(() => import('./pages/admin/ReviewManagement.jsx'))
+const Settings = lazy(() => import('./pages/admin/Settings.jsx'))
 
 /**
  * App.jsx handles application-level routing only. Public routes share
