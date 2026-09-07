@@ -16,17 +16,17 @@
   --color-white: #ffffff;        /* Pure White */
 
   /* ---- Extended Palette -------------------------------------------- */
-  --color-success: #1b6a3b;      /* Forest Green (Success / Available Status) */
-  --color-success-dark: #134f2b; /* Dark Forest Green (Hover/Active Status) */
-  --color-highlight: #ffcd00;    /* Bright Yellow (Featured Callouts) */
+    --color-success: #1b6a3b;      /* Forest Green (Success / Available Status) */
+    --color-success-dark: #134f2b; /* Dark Forest Green (Hover/Active Status) */
+    --color-highlight: #ffcd00;    /* Bright Yellow (Featured Callouts) */
 
-  /* ---- Typography -------------------------------------------------- */
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    /* ---- Typography -------------------------------------------------- */
+    --font-display: "Fraunces", serif;
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* ---- Shape & Elevation ------------------------------------------- */
-  --radius-card: 0.75rem;
-  --shadow-soft: 0 4px 24px -6px rgb(33 28 24 / 0.10);
+    /* ---- Shape & Elevation ------------------------------------------- */
+    --radius-card: 0.75rem;
+    --shadow-soft: 0 4px 24px -6px rgb(33 28 24 / 0.10);
   --shadow-lifted: 0 12px 32px -8px rgb(33 28 24 / 0.16);
 }
 

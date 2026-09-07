@@ -1,8 +1,4 @@
-/**
- * Temporary mock category data (spec section 33 and section 107).
- * Replaced by GET /api/categories once the backend + database exist
- * (Milestone 10).
- */
+
 export const MOCK_CATEGORIES = [
   { id: 1, name: 'Coffee', slug: 'coffee' },
   { id: 2, name: 'Non-Coffee', slug: 'non-coffee' },

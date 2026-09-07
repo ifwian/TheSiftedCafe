@@ -12,15 +12,14 @@ function Hero() {
   return (
     <section className="relative -mt-20 flex min-h-[85vh] items-center justify-center overflow-hidden bg-dark text-white">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-60"
+        className="absolute inset-0 bg-cover bg-center opacity-90"
         style={{
-          backgroundImage:
-            "url('https://placehold.co/1600x1000/211C18/6F4E37?text=The+Sifted+Cafe')",
+         backgroundImage: "url('assets/drinks.jpg')",
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/20"
+        className="absolute inset-0 bg-linear-to-t from-dark via-dark/60 to-dark/20"
         aria-hidden="true"
       />
 

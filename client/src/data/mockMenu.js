@@ -1,9 +1,4 @@
-/**
- * Temporary mock menu data (spec section 107 — Mock Data Rule).
- * Image URLs are neutral brand-colored placeholders standing in for real
- * food/drink photography. Replaced by real API calls (GET /api/menu,
- * GET /api/menu/featured) once the backend + database exist (Milestone 10).
- */
+
 export const MOCK_MENU_ITEMS = [
   {
     id: 1,

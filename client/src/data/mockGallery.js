@@ -1,9 +1,4 @@
-/**
- * Temporary mock gallery data (spec section 20 and section 107).
- * Image URLs are neutral brand-colored placeholders standing in for real
- * photography. Replaced by a real image source once the backend/media
- * storage exists.
- */
+
 export const GALLERY_CATEGORIES = ['Cafe', 'Coffee', 'Food', 'Interior', 'People']
 
 export const MOCK_GALLERY_PHOTOS = [

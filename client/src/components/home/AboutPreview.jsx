@@ -6,7 +6,7 @@ function AboutPreview() {
     <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center">
       <div className="overflow-hidden rounded-card shadow-soft md:order-2">
         <img
-          src="https://placehold.co/800x900/C89B6D/211C18?text=Cafe+Interior"
+          src="assets/interior.jpg"
           alt="Interior of The Sifted Cafe"
           className="h-full w-full object-cover"
           loading="lazy"

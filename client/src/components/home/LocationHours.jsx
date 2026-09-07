@@ -37,10 +37,6 @@ function LocationHours() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-dark/40">
-            * Update the address and hours in{' '}
-            <code>client/src/data/businessInfo.js</code> with real details.
-          </p>
           <Button href={directionsUrl} variant="outline" className="self-start">
             Get Directions
           </Button>
