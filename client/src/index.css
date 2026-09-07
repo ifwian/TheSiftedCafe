@@ -2,29 +2,29 @@
 
 /* =========================================================================
    THE SIFTED CAFE — DESIGN SYSTEM
-   Centralized design tokens (Milestone 02). Every color, font, radius, and
-   shadow used across the app should come from here via Tailwind utility
-   classes (e.g. bg-cream, text-coffee, font-display) — never hardcode raw
-   hex values or font names inside components.
+   Design tokens for color palette, typography, radii, and shadows.
    ========================================================================= */
 
 @theme {
-  /* ---- Brand colors (spec section 12) ------------------------------- */
-  --color-cream: #f7f3ed; /* background */
-  --color-dark: #211c18; /* primary text / dark surfaces */
-  --color-coffee: #6f4e37; /* coffee brown — primary brand color */
-  --color-coffee-dark: #573c2a; /* hover/active state for coffee elements */
-  --color-accent: #c89b6d; /* warm accent — CTAs, highlights */
-  --color-accent-dark: #b3854f; /* hover/active state for accent elements */
-  --color-white: #ffffff;
+  /* ---- Brand Colors ------------------------------------------------ */
+  --color-cream: #eadec7;        /* Cream / Warm Off-White (Background) */
+  --color-dark: #1b2b85;         /* Royal Blue (Primary Text & Dark Surfaces) */
+  --color-coffee: #c82a1d;       /* Vintage Red / Crimson (Primary Brand & CTAs) */
+  --color-coffee-dark: #7a130c;  /* Dark Red / Maroon (Hover/Active State) */
+  --color-accent: #e08a27;       /* Warm Ochre / Mustard (Secondary Accent) */
+  --color-accent-dark: #b36f1d;  /* Dark Ochre / Bronze (Hover/Active State) */
+  --color-white: #ffffff;        /* Pure White */
 
-  /* ---- Typography (spec section 13) ---------------------------------- */
+  /* ---- Extended Palette -------------------------------------------- */
+  --color-success: #1b6a3b;      /* Forest Green (Success / Available Status) */
+  --color-success-dark: #134f2b; /* Dark Forest Green (Hover/Active Status) */
+  --color-highlight: #ffcd00;    /* Bright Yellow (Featured Callouts) */
+
+  /* ---- Typography -------------------------------------------------- */
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* ---- Shape & elevation ---------------------------------------------
-     Kept restrained on purpose (spec section 91: avoid excessive rounded
-     cards, avoid excessive shadows). One soft shadow, modest radii. */
+  /* ---- Shape & Elevation ------------------------------------------- */
   --radius-card: 0.75rem;
   --shadow-soft: 0 4px 24px -6px rgb(33 28 24 / 0.10);
   --shadow-lifted: 0 12px 32px -8px rgb(33 28 24 / 0.16);
@@ -32,9 +32,6 @@
 
 /* =========================================================================
    BASE ELEMENT DEFAULTS
-   Semantic HTML should look correct with no classes. Components then only
-   add layout/spacing utilities on top, instead of repeating font/color
-   choices everywhere.
    ========================================================================= */
 
 @layer base {
@@ -87,7 +84,7 @@
     color: inherit;
   }
 
-  /* Respect reduced-motion preferences across the app. */
+  /* Respect reduced-motion preferences */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -102,9 +99,6 @@
 
 /* =========================================================================
    REUSABLE UTILITY CLASSES
-   Small, named patterns used in many places — the "display" type role and
-   the "eyebrow" label style referenced throughout the spec (e.g. section
-   14 "OUR STORY", section 15 "CUSTOMER FAVORITES").
    ========================================================================= */
 
 @layer components {
