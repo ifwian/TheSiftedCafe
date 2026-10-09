@@ -1,0 +1,21 @@
+{
+  "services": {
+    "client": {
+      "root": "client/"
+    },
+    "server": {
+      "root": "server/",
+      "entrypoint": "server.js"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": { "service": "server" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "client" }
+    }
+  ]
+}
