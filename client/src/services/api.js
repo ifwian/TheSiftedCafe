@@ -1,4 +1,16 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+/**
+ * Base URL for every API call.
+ *
+ * On Vercel the client and the Express API are served from the same
+ * origin (vercel.json rewrites /api/* to the server service), so the
+ * relative default is all production needs -- no env var required.
+ *
+ * `VITE_API_BASE_URL` only matters when the API lives on a different
+ * origin, which is the case for local development against
+ * http://localhost:5000/api. Only VITE_-prefixed variables are inlined
+ * into the client bundle by Vite, so server secrets can never leak here.
+ */
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
 const AUTH_TOKEN_KEY = 'sifted_cafe_admin_token'
 
 /**

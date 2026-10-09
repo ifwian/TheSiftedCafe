@@ -3,6 +3,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { env, isProduction } from './config/env.js'
+import { corsOptionsDelegate } from './config/cors.js'
 import routes from './routes/index.js'
 import { notFound, errorHandler } from './middleware/errorHandler.js'
 import { generalLimiter } from './middleware/rateLimit.js'
@@ -20,13 +21,17 @@ const app = express()
 // instead of the proxy's (spec section 98 -- production vs. dev config).
 app.set('trust proxy', 1)
 
-app.use(helmet())
 app.use(
-  cors({
-    origin: env.clientUrl,
-    credentials: true,
+  helmet({
+    // The API serves JSON only and is consumed by a same-origin client;
+    // CSP is enforced for the Vite app by its own hosting layer. Keeping
+    // it on here would just add headers the API responses don't need.
+    contentSecurityPolicy: false,
+    // Allows the API to be called from the deployed frontend origin.
+    crossOriginResourcePolicy: { policy: 'cross-origin' },
   }),
 )
+app.use(cors(corsOptionsDelegate))
 // Body size capped to reduce the blast radius of oversized-payload abuse
 // (spec section 64).
 app.use(express.json({ limit: '100kb' }))

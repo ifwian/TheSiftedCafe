@@ -2,10 +2,13 @@
 // Run locally after cloning:
 //   npx prisma generate
 //   npx prisma migrate dev --name init
+//
+// Prisma 7 note: the connection string no longer lives in this file. It is
+// declared once in prisma.config.js (CLI: migrate/introspect) and again in
+// src/config/prisma.js via the pg driver adapter (runtime: queries).
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 generator client {
