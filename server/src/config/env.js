@@ -114,13 +114,30 @@ function isSameOrigin(req) {
   const origin = req.headers.origin
   if (!origin) return true // non-browser client (curl, server-to-server)
 
-  const host = req.headers['x-forwarded-host'] ?? req.headers.host
-  if (!host) return false
+  let originHost
+  try {
+    originHost = new URL(origin).host
+  } catch {
+    return false // malformed Origin header
+  }
 
-  const proto =
-    req.headers['x-forwarded-proto']?.split(',')[0].trim() ?? req.protocol
+  // Behind a rewrite proxy (Vercel's multi-service routing sends /api/* to
+  // this service with its own internal hostname) the public host can show
+  // up as one of several comma-separated forwarded values, so compare
+  // against all of them rather than assuming a single `host`.
+  const candidates = new Set(
+    [
+      ...String(req.headers['x-forwarded-host'] ?? '').split(','),
+      req.headers.host,
+    ]
+      .map((value) => value?.trim())
+      .filter(Boolean),
+  )
 
-  return origin === `${proto}://${host}`
+  // Host-only match ignores scheme/port normalization differences, which
+  // is what matters here -- this function exists to recognise our own
+  // frontend, not to police transport security.
+  return candidates.has(originHost)
 }
 
 export const isProduction = nodeEnv === 'production'

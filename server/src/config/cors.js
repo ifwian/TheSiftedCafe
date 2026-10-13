@@ -40,8 +40,14 @@ export function corsOptionsDelegate(req, callback) {
     callback(null, { origin: true, credentials: true })
     return
   }
-  // Passing an Error makes the `cors` middleware reject the request before
-  // it reaches any handler, so no route can accidentally respond with a
-  // wildcard ACAO header.
-  callback(new Error('Origin not allowed by CORS policy'))
+  // `origin: false` serves the request but omits Access-Control-Allow-Origin.
+  //
+  // A same-origin browser request never consults CORS, so refusing to serve
+  // it would only break our own frontend -- which is exactly what happened
+  // behind Vercel's service rewrite, where the forwarded host is the
+  // internal service hostname rather than the public domain. A genuinely
+  // cross-origin caller still cannot read the response, because the
+  // browser blocks any response lacking this header. Nothing is reflected,
+  // so no other site can be granted access either.
+  callback(null, { origin: false, credentials: true })
 }

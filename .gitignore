@@ -10,6 +10,9 @@ build/
 .env.local
 .env.*.local
 
+# Backed-up env files from removed duplicate folder
+.env.backup/
+
 # Logs
 *.log
 npm-debug.log*
